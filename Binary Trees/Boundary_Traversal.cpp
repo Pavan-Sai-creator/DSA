@@ -43,7 +43,7 @@ void addLeaves(TreeNode<int> *node,vector<int> &ans)
 }
 
 vector<int> traverseBoundary(TreeNode<int>* root){
-    vector<int> ans;
+    vector<int> ans; 
     if(root==NULL) return ans;
     if(!isLeaf(root)) ans.push_back(root->data);
     
