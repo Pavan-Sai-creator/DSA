@@ -1,4 +1,20 @@
 //https://www.codingninjas.com/codestudio/problems/boundary-traversal_790725?utm_source=youtube&utm_medium=affiliate&utm_campaign=Striver_Tree_Videos
+bool isLeaf(TreeNode<int> *node)
+{
+    if(node->left==NULL && node->right==NULL) return true;
+    else return false;
+}
+void addLeft(TreeNode<int> *root,vector<int> &ans)
+{
+    TreeNode<int> *cur = root->left;
+    while(cur)
+    {
+        if(!isLeaf(cur)) ans.push_back(cur->data);
+        if(cur->left) cur=cur->left;
+        else cur=cur->right;
+    }
+}
+
 void addRight(TreeNode<int> *root,vector<int> &ans)
 {
     TreeNode<int> *cur = root->right;
